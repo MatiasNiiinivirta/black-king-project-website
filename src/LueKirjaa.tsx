@@ -1,4 +1,3 @@
-import Kartta from "./Images/Kartta_Musta_Kuningas_Lasdor.png";
 import "./App.css";
 
 type Props = {
@@ -6,14 +5,25 @@ type Props = {
   language: "fi" | "en";
 };
 
-function KarttaSivu({ setActiveTab, language }: Props) {
+function LueKirjaaSivu({ setActiveTab, language }: Props) {
   return (
     <>
-      <div className="social">
-        <div className="image-wrapper">
-          <img className="kartta" src={Kartta} alt="" />
+      <section id="next-steps">
+        <div id="docs">
+          <div className="text-wrapper">
+            <h2>
+              {language === "fi"
+                ? "Tervetuloa lukemaan kirjaa!"
+                : "Welcome to reading the book!"}
+            </h2>
+            <p>
+              {language === "fi"
+                ? "Tällä sivulla voit lukea ilmaiseksi kirjan kaksi ensimmäistä lukua ja tutustua Mustan Kuninkaan maailmaan."
+                : "On this page, you can read the first two chapters of the book for free and explore the world of Musta Kuningas."}
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
       <section id="spacer">
         <footer className="footer">
@@ -93,4 +103,4 @@ function KarttaSivu({ setActiveTab, language }: Props) {
   );
 }
 
-export default KarttaSivu;
+export default LueKirjaaSivu;

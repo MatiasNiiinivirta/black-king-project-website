@@ -2,7 +2,7 @@
   --bg: #111111;
   --text: #d9d9d9;
   --text-h: #fff;
-  --border: #fff;
+  --border: #ffffff10;
 
   --code-bg: #222;
   --accent: #aa3bff;
@@ -107,28 +107,33 @@ code,
 
 .parent {
   display: flex;
+  flex: 1; /* vie kaiken vapaan tilan */
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+
   list-style: none;
   margin: 0;
-  padding: 0;
-  justify-content: center; /* Keskittää */
-  gap: 20px; /* Väli nappien väliin */
+  padding: 0 0 0 110px;
+
+  @media (max-width: 1024px) {
+    padding: 0 0 0 0px;
+  }
 }
 
 .parent li a {
   text-decoration: none;
-  margin-right: 15px;
   color: goldenrod;
-  font-size: x-large;
-  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  font-family: system-ui, sans-serif;
   white-space: nowrap;
 }
 
 .parent li a:hover {
   text-decoration: none;
-  margin-right: 15px;
   color: white;
-  font-size: x-large;
-  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  font-family: system-ui, sans-serif;
   font-weight: bold;
   transition: 0, 5s;
   text-shadow: 0px 0px 25px white;
@@ -149,14 +154,16 @@ code,
     text-align: center;
     margin-right: 0;
     font-size: 22px;
+    content: center;
   }
 }
 
 nav {
-  grid-column: 1/-1;
   border-bottom: solid goldenrod 1px;
   border-top: solid goldenrod 1px;
   transition: 2s;
+  display: flex;
+  align-items: center;
 }
 nav:hover {
   box-shadow: 0px 0px 10px goldenrod;
@@ -164,6 +171,35 @@ nav:hover {
   border-top: 1px solid goldenrod;
   background-color: rgba(99, 99, 99, 0.301);
   transition: 1s;
+}
+
+.flag-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.language-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+    margin-right: 5px;
+  }
 }
 
 .nappi {
@@ -245,6 +281,34 @@ code {
   margin: 0 auto;
 }
 
+.kuva1 {
+  width: 90%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.kuva2 {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 350px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    width: 300px;
+  }
+}
+
 .kartta {
   width: 100%;
   height: auto;
@@ -266,6 +330,28 @@ img,
     ellipse at center,
     black 60%,
     transparent 70%
+  );
+}
+
+img,
+.kuva1 {
+  mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 60%,
+    transparent 85%
+  );
+}
+
+img,
+.kuva2 {
+  mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 60%,
+    transparent 85%
   );
 }
 
@@ -341,6 +427,7 @@ img,
   bottom: 25%;
   border-radius: 15px 15px 15px 15px;
   background-color: rgba(99, 99, 99, 0.301);
+  margin: 20px auto 0;
 
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
@@ -390,6 +477,10 @@ img,
     padding: 32px 20px 24px;
     gap: 18px;
   }
+}
+
+#next-steps .text-wrapper a {
+  color: black;
 }
 
 #next-steps {
@@ -544,12 +635,16 @@ img,
 }
 
 .socials a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
 .socials a:hover {
   color: goldenrod;
+}
+
+.contact-text p + p {
+  margin-top: 20px;
 }
 
 #spacer > div {

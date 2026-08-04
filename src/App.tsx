@@ -1,16 +1,29 @@
 import { useState } from "react";
 import Kirjasta from "./Kirjasta";
 import KarttaSivu from "./Kartta";
+import YhteystiedotSivu from "./Yhteystiedot";
+import LuekirjaaSivu from "./LueKirjaa";
+import GBFlag from "./assets/gb.svg";
+import FIFlag from "./assets/fi.svg";
+import logoFIN from "./Images/logo1_fin.png";
+import logoENG from "./Images/logo1_eng.png";
+
 import "./App.css";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Kirjasta");
-
+  const [language, setLanguage] = useState<"fi" | "en">("fi");
   return (
     <>
       <section>
         <header className="top-header">
-          <h1>Musta Kuningas</h1>
+          <div className="logo-wrapper">
+            <img
+              className="logo"
+              src={language === "fi" ? logoFIN : logoENG}
+              alt="Logo"
+            />
+          </div>
         </header>
       </section>
 
@@ -28,7 +41,7 @@ function App() {
                   setActiveTab("Kirjasta");
                 }}
               >
-                Kirjasta
+                {language === "fi" ? "Kirjasta" : "About the Book"}
               </a>
             </li>
 
@@ -41,7 +54,7 @@ function App() {
                   setActiveTab("Luekirjaa");
                 }}
               >
-                Lue kirjaa
+                {language === "fi" ? "Lue kirjaa" : "Read the Book"}
               </a>
             </li>
 
@@ -54,48 +67,57 @@ function App() {
                   setActiveTab("Kartta");
                 }}
               >
-                Kartta
+                {language === "fi" ? "Kartta" : "Map"}
               </a>
             </li>
 
             <li>
               <a
                 href="#"
-                className={`nappi ${activeTab === "Otayhteytta" ? "active" : ""}`}
+                className={`nappi ${activeTab === "Yhteystiedot" ? "active" : ""}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveTab("Otayhteytta");
+                  setActiveTab("Yhteystiedot");
                 }}
               >
-                Ota yhteyttä
+                {language === "fi" ? "Ota yhteyttä" : "Contact"}
               </a>
             </li>
           </ul>
+
+          <div className="language-switcher">
+            <button
+              className={`language-button ${language === "fi" ? "active" : ""}`}
+              onClick={() => setLanguage("fi")}
+            >
+              <img src={FIFlag} alt="Finnish Flag" className="flag-icon" />
+            </button>
+            <button
+              className={`language-button ${language === "en" ? "active" : ""}`}
+              onClick={() => setLanguage("en")}
+            >
+              <img src={GBFlag} alt="English Flag" className="flag-icon" />
+            </button>
+          </div>
         </nav>
       </section>
 
       <div className="ticks"></div>
 
-      {activeTab === "Kirjasta" && <Kirjasta setActiveTab={setActiveTab} />}
-
-      {activeTab === "Luekirjaa" && (
-        <>
-          <div>
-            <h2>Lue kirjaa</h2>
-            <p>Tervetuloa lukemaan kirjaa!</p>
-          </div>
-        </>
+      {activeTab === "Kirjasta" && (
+        <Kirjasta setActiveTab={setActiveTab} language={language} />
       )}
 
-      {activeTab === "Kartta" && <KarttaSivu setActiveTab={setActiveTab} />}
+      {activeTab === "Luekirjaa" && (
+        <LuekirjaaSivu setActiveTab={setActiveTab} language={language} />
+      )}
 
-      {activeTab === "Otayhteytta" && (
-        <>
-          <div>
-            <h2>Ota yhteyttä</h2>
-            <p>Tervetuloa ottamaan yhteyttä!</p>
-          </div>
-        </>
+      {activeTab === "Kartta" && (
+        <KarttaSivu setActiveTab={setActiveTab} language={language} />
+      )}
+
+      {activeTab === "Yhteystiedot" && (
+        <YhteystiedotSivu setActiveTab={setActiveTab} language={language} />
       )}
     </>
   );
