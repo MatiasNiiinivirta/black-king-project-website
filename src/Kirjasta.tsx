@@ -44,7 +44,7 @@ function Kirjasta({ setActiveTab, language }: Props) {
             <img className="kansikuva" src={Kansikuva} alt="" />
 
             <div className="image-banner">
-              <h2>{language === "fi" ? "Ja minä?" : "And me?"}</h2>
+              <h2>{language === "fi" ? '"Ja minä?"' : '"And me?"'}</h2>
               <p>
                 {language === "fi" ? "Kuiskasi poika" : "Whispered the boy"}
               </p>
@@ -53,8 +53,8 @@ function Kirjasta({ setActiveTab, language }: Props) {
             <div className="image-banner2">
               <h2>
                 {language === "fi"
-                  ? "He ovat lampaita, jotka seuraavat sokeasti paimentaan"
-                  : "They are sheep that follow their shepherd blindly"}
+                  ? '"He ovat lampaita, jotka seuraavat sokeasti paimentaan"'
+                  : '"They are sheep that follow their shepherd blindly"'}
               </h2>
               <p>
                 {language === "fi"
@@ -66,8 +66,8 @@ function Kirjasta({ setActiveTab, language }: Props) {
             <div className="image-banner3">
               <h2>
                 {language === "fi"
-                  ? "Heidän suurin pelkonsa. Ihmiskunnan vihollinen."
-                  : "Their greatest fear. The enemy of mankind."}
+                  ? '"Heidän suurin pelkonsa. Ihmiskunnan vihollinen."'
+                  : '"Their greatest fear. The enemy of mankind."'}
               </h2>
               <p>
                 {language === "fi"
