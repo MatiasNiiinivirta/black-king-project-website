@@ -5,7 +5,8 @@ The Black King is a Finnish fantasy novel project that takes readers to a dark a
 This project has been with with Typescript react and...
 
 <img width="1914" height="930" alt="kuva1" src="https://github.com/user-attachments/assets/58c15a38-16a3-44a6-8b3e-cd45f8f4c4fc" />
-<img width="1903" height="929" alt="kuva2" src="https://github.com/user-attachments/assets/0332519a-bbe6-4297-9187-5a3492a0df66" />
+<img width="1900" height="931" alt="kuva3" src="https://github.com/user-attachments/assets/daf732ca-7335-4e7d-9a2a-23d508538090" />
+
 
 This project was built with TypeScript, React, and Vite. The website serves as the official home for The Black King, providing information about the novel, its characters and world, as well as selected chapters for readers to explore.
 
