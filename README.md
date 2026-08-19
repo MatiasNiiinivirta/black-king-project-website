@@ -1,75 +1,31 @@
-# React + TypeScript + Vite
+## Welcome!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Black King is a Finnish fantasy novel project that takes readers to a dark and detailed world where empires waver, ancient beliefs live on, and every choice has consequences. The story follows the young prince Androsta, whose life changes irrevocably as events push the Lastian empire toward chaos. The project has been in development since 2019 and is planned as a multi-book fantasy series.
 
-Currently, two official plugins are available:
+This project has been with with Typescript react and...
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<img width="1914" height="930" alt="kuva1" src="https://github.com/user-attachments/assets/58c15a38-16a3-44a6-8b3e-cd45f8f4c4fc" />
+<img width="1903" height="929" alt="kuva2" src="https://github.com/user-attachments/assets/0332519a-bbe6-4297-9187-5a3492a0df66" />
 
-## React Compiler
+This project was built with TypeScript, React, and Vite. The website serves as the official home for The Black King, providing information about the novel, its characters and world, as well as selected chapters for readers to explore.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
 
-## Expanding the ESLint configuration
+- TypeScript
+- React
+- Vite
+- CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Information about the novel and its world
+- Character and author information
+- Interactive world map
+- Free chapters to read
+- Contact form
+- Finnish and English language support
+- Responsive design for desktop and mobile devices
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Project Status
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+The website is currently under development alongside the novel. New content and features will be added as the project progresses.
